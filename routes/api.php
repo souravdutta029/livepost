@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::prefix('v1')
+        ->group(function (){
+            \App\Helpers\Routes\RouteHelper::includeRouteFiles(__DIR__.'/api/v1');
+
+//            require __DIR__ . '/api/v1/users.php';
+//            require __DIR__ . '/api/v1/posts.php';
+//            require __DIR__ . '/api/v1/comments.php';
+        });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

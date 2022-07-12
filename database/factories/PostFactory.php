@@ -25,7 +25,7 @@ class PostFactory extends Factory
     public function untitled()
     {
         return $this->state([
-            'title' => 'untitle'
+            'title' => 'untitled'
         ]);
     }
 }
