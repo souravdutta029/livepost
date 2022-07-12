@@ -24,7 +24,9 @@ class PostSeeder extends Seeder
 
         $this->truncate('posts');
 
-        $posts = Post::factory(3)->untitled()->create();
+        $posts = Post::factory(200)
+//            ->untitled()
+            ->create();
 
         $posts->each(function (Post $post){
             $post->users()->sync([FactoryHelper::getRandomModelId(User::class)]);
